@@ -1,265 +1,340 @@
+
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMDB: Review, Rating of Bangladeshi Movies Database</title>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IUT DMS</title>
+  <link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="https //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
-
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
-
-    
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/22fda2a086.js" crossorigin="anonymous"></script>
 
 </head>
-
 <body>
-    
-    <section class="header">
 
-        <nav>
-            <a href="index.html"> <img src="images/iut_logo.png" alt="iut logo"> </a>
+  <!-- HEADER -->
 
-            <div class="nav-links" id="navLinks">
+  <section id="header">
 
-                <i class="fa fa-times" onclick="hideMenu()"></i>
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#top"> HOME </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">FEATURES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">REVIEWS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">CONTACT US</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="#team-id">TEAM</a></li>
-                    <li><a href="#hall-part">HALL</a></li>
-                    <li><a href="login.php" target="_blank">LOGIN</a></li>
-                    <li><a href="#about-id">ABOUT</a></li>
+  </section>
 
 
-                </ul>
 
-            </div>
 
-            <i class="fa fa-bars" onclick="showMenu()""></i> 
-            
-        </nav>
+  <!-- Welcome Text -->
 
-        <div class="text-box">
-
-            <h1>IUT Dormitory Management System</h1>
-            <p>It is an web application for the residential students of Islamic University of Technology.<br> Feel free to explore the website!</p>
-            <a href="https://cse.iutoic-dhaka.edu" class="hero-btn" target="_blank">KNOW MORE ABOUT IUT</a>
-
+  <section id="welcome">
+    <div class="container">
+      <div class="welcome text-center wow fadeInUp">
+        
+        <h1>Find your home Now</h1>
+        <p>Vara Hobe is a platform where tenant can get desire property as well as
+          landlord can get tenant without hassle-free process. Keep exploring our website!</p>
+        <div class="dropdown">
+          <button class="register-button">Login Now</button>
+          <div class="dropdown-content">
+            <a href="varatia_auth.php" target="_blank">Varatia</a>
+            <a href="bariwala_auth.php" target="_blank">Bariwala</a>
+            <a href="admin_auth.php" target="_blank">Admin</a>
+          </div>
         </div>
 
-    </section>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- Halls of IUT -->
 
-    <section class="hall" id="hall-part">
-
-        <h1>HALLS OF RESIDENCE</h1>
-        <p>IUT provides residential facilities that is safe and comfortable and in great locations inside the University campus.</p>
-
-        <div class="row">
-
-            <div class="hall-col">
-
-                <h3>South Hall</h3>
-                <p>
-                    South hall is the oldest hall in IUT. The view from south hall of residence is fabulous.
-                    It is a five storey building where every floor has 30 rooms. Four students can live in a room. 
-                    So, a maximum of 600 students can be accommodated in this hall.
-               </p>
- 
-            </div>
+  <!-- About US -->
 
 
-            <div class="hall-col">
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center wow fadeInLeft">
+          <img src="images/home.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-6 text-justify wow fadeInRight">
+          <h3>Find your home easily!</h3>
+          <p>There is not a good enough home rental application in Bangladesh to the best of our knowledge. 
+            So, we will try to build this project & take the place.</p>
+          <p>Finding a suitable home for anyone is a big hassle in Bangladesh. One needs to go from this building to that building only to find a home to stay. Still, there is a chance that one might not find his appropriate house.
+             So, we should take this opportunity by building a home rental app.</p>
+        </div>
+        <div class="col-md-6 text-justify wow fadeInLeft">
+          <h3>Get your home within a moment</h3>
+          <p>There is not a good enough home rental application in Bangladesh to the best of our knowledge. 
+            So, we will try to build this project & take the place.</p>
+          <p>Finding a suitable home for anyone is a big hassle in Bangladesh. One needs to go from this building to that building only to find a home to stay. Still, there is a chance that one might not find his appropriate house.
+             So, we should take this opportunity by building a home rental app.</p>
+        </div>
+        <div class="col-md-6 wow fadeInRight">
+        <div class="embed-responsive embed-responsive-16by9">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_Ecl_XEETEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <h3>North Hall</h3>
-                <p>
-                    North hall is the 2nd oldest hall in IUT. It is also a five storey building where every floor has 30 rooms. 
-                    Four students can live in a room. The cafeteria for residential students is located at the ground floor of 
-                    North hall of residence.   
-                </p>
- 
-            </div>
 
 
-            <div class="hall-col">
 
-                <h3>Female Hall</h3>
-                <p>
-                    Residential facility for female students has been extended.  Most of the female students are expected to avail
-                     residential facility but not all. Therefore allotmentof seats in the female halls of residence will be based 
-                     on the policy adopted by IUT. 
-                </p>
- 
-            </div>
+  <!-- ------------Services------------- -->
 
+  <section id="services">
+    <div class="container">
+      <div class="row wow fadeInUp">
+        <div class="col-md-4">
+          <img src="img/budget.png" class="wow fadeInRight delay-1s" alt="">
+          <h4 class="wow fadeInRight delay-2s">Affordable</h4>
+          <p>Vara hobe finds you the most affordable home you can find. Here, you will have your desired home in an affordable price.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="img/secure.png" class="wow fadeInRight delay-1s" alt="">
+          <h4 class="wow fadeInRight delay-2s">Secured</h4>
+          <p>Vara hobe finds you the most secured home you can find. Here, you will have your desired home which is secured.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="img/hassle-free.png" class="wow fadeInRight delay-1s" alt="">
+          <h4 class="wow fadeInRight delay-2s">Hassle-free </h4>
+          <p>Vara hobe finds you a hassle-free home where you can stay. Here, you will have your hassle-free home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- --------------Features------------------ -->
+
+  <section id="features">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 wow fadeInLeft">
+          <img src="img/home-front.jpg" class="img-fluid" alt="">
         </div>
 
-    </section>
-
-
-
-    <!-- Team section starts here -->
-
-    <section class="team" id="team-id">
-
-        <h1>Meet the Team</h1>
-        <p>Meet the team members who are working to make IUT DMS happen!</p>
-
-        <div class="row">
-
-            <div class="team-col">
-
-                <img src="images/oeshy.jpg" alt="">
-
-                <div class="layer">
-
-                    <h3>Nafisa Tabassum <br> 190042104</h3>
-                    
-                </div>
-
+        <div class="col-md-6 wow fadeInDown">
+          <div class="feature-box">
+            <div class="feature-left">
+              <i class="fa fa-money"></i>
             </div>
-
-            <div class="team-col">
-
-                <img src="images/ajwad.jpg" alt="">
-
-                <div class="layer">
-
-                    <h3>Ajwad Abrar<br>190042106</h3>
-
-                </div>
-
+            <div class="feature-right">
+              <h4>No service charge</h4>
+              <p>No service charge is required for getting the service from Vara Hobe.</p>
             </div>
-
-            <div class="team-col">
-
-                <img src="images/prianka.jpg" alt="">
-
-                <div class="layer">
-
-                    <h3>Prianka Maheru <br> 190042112 </h3>
-
-                </div>
-
-
+          </div>
+        
+          <div class="feature-box">
+            <div class="feature-left">
+              <i class="fa fa-handshake-o"></i>
             </div>
-
-        </div>
-    
-
-    </section>
-
-
-    <!-- Facilities Section starts here  -->
-
-
-    <section class="facilities">
-
-        <h1>Facilities</h1>
-        <p>Facilities a student can get after getting into the dorm in IUT </p>
-
-
-        <div class="row">
-
-            <div class="facilities-col">
-
-                <img src="images/fac1.png" alt="">
-
-                <h3>Electricity</h3>
-                <p>
-                    Residential students under IUT halls will not experience any load shedding at all. IUT provides 24 * 7 electricity.
-                    So, students don't need to think about load-shedding. They can always focus on their study.
-                </p>
-                
+            <div class="feature-right">
+              <h4>Reliable</h4>
+              <p>Vara Hobe is a reliable platform for finding the perfect home for you.</p>
             </div>
+          </div>
 
-
-            <div class="facilities-col">
-
-                <img src="images/fac2.png" alt="">
-
-                <h3>Cafeteria</h3>
-
-                <p>IUT has two self-service Cafeterias where the students take their breakfast and normal meals. 
-                All residential students are provided with continental breakfast, lunch, evening tea and dinner. </p>
-
+          <div class="feature-box">
+            <div class="feature-left">
+              <i class="fa fa-check"></i>
             </div>
-
-
-            <div class="facilities-col">
-
-                <img src="images/fac3.png" alt="">
-
-                <h3>Security</h3>
-
-                <p>
-                    The security provided in the dormitories by IUT is top-notch. That is why students living in IUT dorms are safe & always 
-                    under the supervision of IUT. Security is always a big deal for dormitories.
-                </p>
-
+            <div class="feature-right">
+              <h4>Simple</h4>
+              <p>It is very simple to browse & find your desired home from this application.</p>
             </div>
-
+          </div>
         </div>
 
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <div id="about-id">
-        <p>IUT DMS is basically a web based application for maintaining the dormitory system digitally.
-            Every year many students get into IUT & start staying in the hall, get notified about hall 
-            notices, inform the authority about any problem and do other activities. It is a platform which
-            is built to put these activities in an automated way.</p>
+
+
+
+
+
+
+  <!-- ------------Testimonials---------------- -->
+
+
+  <section id="testimonials">
+   <div class="container">
+    <h1 class="text-center">Meet our users</h1>
+
+    <p class="text-center">
+      Meet some of the users of our website & what they think  
+      <br>about our platform. 
+    </p>
+
+     <div class="row">
+
+       <div class="col-md-4 wow fadeInLeft delay-1s">
+         <p class="review text-justify">
+            Vara Hobe is an excellent platform for finding your suitable home, I can guarantee you. I trusted 
+            this platform to find my own house to stay & it turned out to be a very good decision at 
+            the end of the day.
+           <br> <i class="fa fa-twitter"></i>   <span>@prianka</span>
+         </p>
+         <img src="img/pinku.jpg" alt="">
+       </div>
+
+       <div class="col-md-4 middle wow fadeInUp">
+         <p class="review text-justify">
+            It was hard for me to find my desired house to stay. But this Vara Hobe platform was
+            there for me to find the best possible home to move in. I would recommend people to check this
+            platform to find your desired home.
+           <br> <i class="fa fa-twitter"></i>   <span>@oeshy</span>
+         </p>
+         <img src="img/oeshy.jpg" alt="">
+       </div>
+
+       <div class="col-md-4 wow fadeInRight delay-1s">
+         <p class="review text-justify">
+            I was looking for a house to move in but I could not find my preferable house. Then I checked 
+            this platform & was surprised to see a lot of options. Thanks to Vara Hobe for being the best 
+            platform for renting any house.
+           <br> <i class="fa fa-twitter"></i>   <span>@ajwad</span>
+         </p>
+         <img src="img/ajwad.jpg" alt="">
+       </div>
+
+     </div>
+   </div> 
+  </section>
+
+
+
+  <!-- -------------------Subscribe-------------------- -->
+
+  <section id="subscribe">
+    <div class="container">
+      <div class="subscribe text-center wow fadeInUp delay-1s">
+        <h3>Join for free trial now</h3>
+        <p>Subscribe us & get all the latest news, offers & what not!</p>
+        <div class="input-group">
+          <input type="email" class="form-control" placeholder="Email Id">
+          <div class="input-group-append">
+            <button type="submit" class="input-group-text btn">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+
+
+
+
+
+
+
+
+  <!-- ----------Footer Section---------- -->
+
+  <section id="footer"> 
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-3">
+          <img src="img/logo_black.png" class="footer-logo" alt="">
+          <p class="text-justify">Vara Hobe, an excellent platform for finding your desired home! Come, join the website to know more about us.</p>    
+        </div>
+
+        <div class="col-md-3">
+          <h1>Features</h1>
+          <p>Security</p>
+          <p>Reliable</p>
+          <p>Flexible</p>
+          <p>No service charge</p>
+        </div>
+
+
+        <div class="col-md-3">
+          <h1>Quick contact</h1>
+          <p> <i class="fa fa-phone-square"></i> +8801984567679</p>
+          <p> <i class="fa fa-envelope"></i> varahobe@gmail.com</p>
+          <p> <i class="fa fa-home"> </i> IUT, Boardbazar</p>
+          <p class="city">Gazipur city, Dhaka</p>
+        </div>
+
+
+        <div class="col-md-3">
+          <h1>Follow us on</h1>
+          <p> <i class="fa fa-facebook-official"></i> Facebook</p>
+          <p> <i class="fa fa-youtube-play"></i> Youtube</p>
+          <p> <i class="fa fa-linkedin"> </i> Linkedin </p>
+          <p > <i class="fa fa-twitter"></i> Twitter </p>
+        </div>
+
+      </div>      <hr>
+
+      <p class="copyright">Made with <i class="fa fa-heart-o"></i> by Group 8</p>
+
     </div>
 
+  </section>
 
 
-    <!-- Footer section starts here -->
 
-    <section class="footer">
+  <!-- -----------Smppth Scroll JS -->
 
-        <div class="icons">
+  <script src="js/smooth-scroll.js"></script>
 
-            <a hrf="https://www.facebook.com"><i class="fa fa-facebook"></i> </a>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-youtube-play"></i>
 
-            <p><i class="fa fa-copyright"></i>All rights reserved by IUT </p>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+  </script>
 
-        </div>
 
-    </section>
+  <!-- ----------------Animation -------------- -->
 
-    <!-- Javascript for toggling Menu -->
+  <script src="js/wow.min.js"></script>
 
-    <script>
-
-        var navLinks = document.getElementById("navLinks");
-
-        function showMenu(){
-            navLinks.style.right = "0";
-        }
-
-        function hideMenu(){
-            navLinks.style.right = "-200px";
-        }
-
-    </script>
+  <script>
+    new WOW().init();
+  </script>
 
 </body>
-
 </html>
-
