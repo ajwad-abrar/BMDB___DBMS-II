@@ -4,7 +4,7 @@
 session_start();
 
 if(isset($_SESSION['uid'])){
- header("Location: varatia_home.php");
+ header("Location: user_home.php");
 
 }
 
