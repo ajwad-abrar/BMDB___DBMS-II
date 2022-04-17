@@ -102,7 +102,7 @@ session_start();
                     </div>
 
                     <div class="text-center mt-5">
-                        <button type="submit" class="btn btn-success btn-lg" id="submit_button" name="usear_search_movie">Submit</button>
+                        <button type="submit" class="btn btn-success btn-lg" id="submit_button" name="user_search_movie">Submit</button>
                     </div>
 
 
@@ -112,7 +112,7 @@ session_start();
 
                 <div class="card-body">
                     <h4 class="card-title text-center" style="color:dodgerblue; font-size: 26px; font-weight: 700;">Movie Details</h4>
-                    
+                    <h5 class="card-title" style="color: black;"><?php searchDetailsOfTheMovie(); ?></h5>
 
                 </div>
 
@@ -121,6 +121,62 @@ session_start();
             </div>          
 
         </div>
+
+
+
+
+
+
+    <?php
+
+      function searchDetailsOfTheMovie(){
+
+        if(isset($_POST['user_search_movie'])) {
+
+            $servername = "localhost";
+            $username = "root";
+            $password = "190042106";
+            $dbname = "bmdb";
+
+            // Create connection
+            $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+
+            $movie_name = $_POST['movie_name'];
+
+            $sql1 = "SELECT * FROM movie M WHERE M.title = '$movie_name'";
+
+            $result1 = mysqli_query($conn, $sql1);
+
+            // Check connection
+            if (!$conn) {
+              die("Connection failed: " . mysqli_connect_error());
+            }
+
+            if (mysqli_query($conn, $sql1)) {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($result1)) {
+                    echo "<b>Name: </b>" .$row['title'] ." <br> <br>";
+                    echo "<b>Genre: </b>" .$row['genre'] ." <br> <br>";
+                    echo "<b>Release Date: </b>" .$row['release_date'] ." <br> <br>";
+                    echo "<b>Production Cost: </b> " .$row['production_cost'] ." <br><br>";
+                    echo "<b>Rating: </b>" .$row['rating'] ." <br><br>";
+                    // echo "<b> Reg Date: </b>" .date("d M, Y", strtotime($row['reg_date']))." ";   //Not needed rn
+                }
+            } else {
+                echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
+            }
+
+
+            mysqli_close($conn);
+
+        }
+      }    
+
+    ?>	
+
+
+
 
 
         <!--=====  JS =====-->

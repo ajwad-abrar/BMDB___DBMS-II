@@ -16,7 +16,7 @@
         $genre = $_POST['genre'];
         $release_date = $_POST['release_date'];
         $cost = $_POST['cost'];
-        $rating = $_POST['rating'];
+        // $rating = $_POST['rating'];
         $director = $_POST['director'];
         $email = $_SESSION['email'];
 
@@ -25,7 +25,7 @@
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $sql = "INSERT INTO movie(title, genre, release_date, production_cost, rating, director_id) VALUES ( '$title', '$genre', '$release_date', '$cost', '$rating', '$director')";
+        $sql = "INSERT INTO movie(title, genre, release_date, production_cost, director_id) VALUES ( '$title', '$genre', '$release_date', '$cost', '$director')";
 
         if (mysqli_query($conn, $sql)) {
             echo "";
@@ -153,10 +153,10 @@
                             <input class="form-control" type="number" id="cost" name="cost">
                     </div>
 
-                    <div class="col">
+                    <!-- <div class="col">
                         <h4 class="text-center">Rating</h4>
                         <input class="form-control" type="number" id="rating" name="rating"  step="any" min="0" max="10">
-                    </div>
+                    </div> -->
 
                     <div class="col">
                             <h4 class="text-center">Director ID</h4>

@@ -105,14 +105,14 @@ session_start();
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-sm-6">
+                                            <!-- <div class="col-sm-6">
                                                 <p class="m-b-10 f-w-600">Gender</p>
                                                 <h6 class="text-muted f-w-400">Male</h6>
                                             </div>
                                             <div class="col-sm-6">
                                                 <p class="m-b-10 f-w-600">NID</p>
                                                 <h6 class="text-muted f-w-400">1212121212</h6>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <!-- <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Apartment Info</h6>
                                         <div class="row">
