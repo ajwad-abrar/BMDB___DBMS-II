@@ -123,10 +123,6 @@ session_start();
         </div>
 
 
-
-
-
-
     <?php
 
       function searchDetailsOfTheMovie(){
@@ -174,10 +170,6 @@ session_start();
       }    
 
     ?>	
-
-
-
-
 
         <!--=====  JS =====-->
         <script src="js/user_js.js"></script>

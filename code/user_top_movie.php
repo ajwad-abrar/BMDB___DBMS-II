@@ -77,9 +77,20 @@ session_start();
         </div>
 
        
-
+        <h1 class="text-center">Top Rated Movies</h1>
         
-
+        
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="images/first-img.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Monpura</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Rating: 6.5</li>
+            <li class="list-group-item">Genre: Romantic</li>
+            <li class="list-group-item">Release Year: 2011</li>
+        </ul>
+        </div>
         
 
     

@@ -56,3 +56,58 @@ CREATE TABLE Movie
 	CONSTRAINT movie_pk PRIMARY KEY(movie_id),
 	CONSTRAINT movie_fk FOREIGN KEY(director_id) REFERENCES Director(director_id)
 );
+
+
+
+
+
+
+CREATE TABLE patient
+(
+	user_id INT,
+	dob DATE,
+	phone_no NUMBER,
+	email VARCHAR(50),
+	name VARCHAR(20),
+	gender VARCHAR(20),
+	password VARCHAR(20),
+	CONSTRAINT user_pk PRIMARY KEY(user_id)
+);
+
+
+
+
+-------------------------------
+
+CREATE OR REPLACE FUNCTION generate_patient_id (phone_no NUMBER)
+RETURN INTEGER
+IS
+    next_seq INTEGER;
+
+BEGIN
+    SELECT MAX(patient_id) INTO next_seq FROM Patients 
+    WHERE patient_phone_number = phone_no;
+
+    IF next_seq != 0 THEN
+        next_seq := next_seq + 1;
+    ELSE
+        
+        next_seq := 1;
+
+        next_seq := TO_NUMBER(
+            TO_CHAR(phone_no) ||
+            TO_CHAR(next_seq)
+        );
+    END IF;
+
+    RETURN next_seq;
+
+END;
+/
+
+CREATE OR REPLACE TRIGGER generate_patient_id BEFORE INSERT 
+ON Patients FOR EACH ROW 
+BEGIN
+    :NEW.patient_id := generate_patient_id(:NEW.patient_phone_number);
+END;
+/
