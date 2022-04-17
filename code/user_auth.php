@@ -3,81 +3,21 @@
 // sign up
 session_start();
 
-if(isset($_SESSION['uid'])){
+if(isset($_SESSION['user_id'])){
  header("Location: user_home.php");
-
 }
 
-// use PHPMailer\PHPMailer\PHPMailer;
-//     use PHPMailer\PHPMailer\SMTP;
-//     use PHPMailer\PHPMailer\Exception;
- 
-//     //Load Composer's autoloader
-//     require 'vendor/autoload.php';
-
-// function sendemail_verify($name,$email,$verify_token){
-//   $mail = new PHPMailer(true);
-       
-//   $mail->SMTPDebug = 3;//SMTP::DEBUG_SERVER;
-
-//   //Send using SMTP
-//   $mail->isSMTP();
-
-//   //Set the SMTP server to send through
-//   $mail->Host = 'smtp.gmail.com';
-
-//   //Enable SMTP authentication
-//   $mail->SMTPAuth = true;
-
-//   //SMTP username
-//   $mail->Username = 'maheruprianka28@gmail.com';
-
-//   //SMTP password
-//   $mail->Password = 'pr1@nk@1613';
-
-//   //Enable TLS encryption;
-//   // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-
-//   $mail->SMTPSecure = "tls";
-
-//   //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-//   $mail->Port = 587;
-
-//   //Recipients
-//   $mail->setFrom('maheruprianka28@gmail.com', 'varahobe');
-
-//   //Add a recipient
-//   $mail->addAddress($email);
-
-//   //Set email format to HTML
-//   $mail->isHTML(true);
 
 
-//   $mail->Subject = 'Email verification';
-  
+	$con = mysqli_connect('localhost', 'root','190042106');
 
-//   $mail->body = "<h2>registered</h2>
-//   <a href='http://localhost/Vara_Hobe---SPL-II/verify.php?token=$verify_token'>click here</a>
-//  ";
-// ;
-//   $mail->send();
-//   // echo 'Message has been sent';    
-
-//   if(!$mail->send()){
-//     echo "error";
-//   }
-// }
-
-
-	$con =mysqli_connect('localhost', 'root','190042106');
-
-	mysqli_select_db($con, 'vara_hobe');
+	mysqli_select_db($con, 'bmdb');
 
   if(isset($_POST['register'])){
   
     $name = mysqli_real_escape_string($con,$_POST['name']);
     $email = mysqli_real_escape_string($con,$_POST['email']);
-    $nid= mysqli_real_escape_string($con,$_POST['nid']); 
+    //$nid= mysqli_real_escape_string($con,$_POST['nid']); 
     $password = mysqli_real_escape_string($con,$_POST['pwd']);
     $cpassword= mysqli_real_escape_string($con,$_POST['cpwd']);
     $verify_token= md5(rand());
@@ -85,18 +25,18 @@ if(isset($_SESSION['uid'])){
    
     $hashed_password= password_hash($password, PASSWORD_DEFAULT);
   
-    $query1 = " select * from varatia where email = '$email' ";
+    $query1 = " select * from user where email = '$email' ";
     $result1 = mysqli_query($con, $query1);
     $num1 = mysqli_num_rows($result1);
 
 
     if($num1 == 1){
   
-  echo '<script type ="text/JavaScript">';  
-  echo 'alert("Email already used")';  
-  echo '</script>';
-    
-   header("Location: varatia_auth.php");
+      echo '<script type ="text/JavaScript">';  
+      echo 'alert("Email already used")';  
+      echo '</script>';
+        
+      header("Location: user_auth.php");
     }
   
     else {
@@ -104,8 +44,8 @@ if(isset($_SESSION['uid'])){
       if($cpassword == $password){
 
   
-          $reg1 = " insert into varatia(name, email, nid, password,verify_token) 
-          values('$name', '$email', '$nid', '$hashed_password','$verify_token')" ;
+          $reg1 = " insert into user(name, email, password) 
+          values('$name', '$email', '$hashed_password')" ;
   
           $query_run= mysqli_query($con, $reg1);
           
@@ -116,43 +56,27 @@ if(isset($_SESSION['uid'])){
             echo '<script type ="text/JavaScript">';  
             echo 'alert("Registration Successful")';  
             echo '</script>'; 
-            
-            // $to= $email;
-            // $subject= "Email Verification";
-            // $message="<a href='http://localhost/Vara_Hobe---SPL-II/verify.php?verify_token=$verify_token'>Click here</a>";
-            // $headers ="From: maheruprianka28@gmail.com \r\n";
-            // $headers .= "MIME-Version: 1.0" . "\r\n";
-            // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-
-            // mail($to,$subject,$message,$headers);
-          
-           
 
            }
            else{
 
             echo '<script type ="text/JavaScript">';  
             echo 'alert("Registration Failed")';  
-            echo '</script>';  
- 
-          
+            echo '</script>'; 
 
            }                
        }
   
   
-       else{
+      else{
       
+        echo '<script type ="text/JavaScript">';  
+        echo 'alert("Password does not macth")';  
+        echo '</script>';
 
-      
-      echo '<script type ="text/JavaScript">';  
-      echo 'alert("Password does not macth")';  
-      echo '</script>';
-
-      header("Location: varatia_auth.php");
+        header("Location: user_auth.php");
      
-        }    
+      }    
     }  
   }
 
@@ -165,7 +89,7 @@ if(isset($_SESSION['uid'])){
 
 $con =mysqli_connect('localhost', 'root','190042106');
 
-mysqli_select_db($con, 'vara_hobe');
+mysqli_select_db($con, 'bmdb');
 
 if(isset($_POST['login'])){
 
@@ -173,7 +97,7 @@ if(isset($_POST['login'])){
   $email = mysqli_real_escape_string($con,$_POST['email']);
   $password = mysqli_real_escape_string($con,$_POST['pwd']);
  
-  $query1 = " select * from varatia where email='$email' ";
+  $query1 = " select * from user where email='$email' ";
   $result1 = mysqli_query($con, $query1);
   $numberOfRows1 = mysqli_num_rows($result1);
   
@@ -184,21 +108,15 @@ if(isset($_POST['login'])){
   while($row = mysqli_fetch_assoc($result1)) {
   
     if(password_verify($password, $row['password'] )){
-
      
-        $_SESSION['uid'] = $row['id'];
-        header('location:varatia_home.php');
-      
+        $_SESSION['user_id'] = $row['user_id'];
+        header('location:user_home.php');
      
     }
 
     else{
-    // echo  '<div class="alert alert-danger alert-dismissible text-center">
-    //      Wrong Password
-    //     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    //   </div>';
 
-    echo '<script type ="text/JavaScript">';  
+      echo '<script type ="text/JavaScript">';  
       echo 'alert("Wrong Password")';  
       echo '</script>';
 
@@ -233,7 +151,7 @@ if(isset($_POST['login'])){
               
             </div> -->
         <div class="signin-signup">
-          <form action="varatia_auth.php" class="sign-in-form" method="post">
+          <form action="user_auth.php" class="sign-in-form" method="post">
             <h2 class="title">User Sign in</h2>
 
             <div class="input-field">
@@ -251,7 +169,7 @@ if(isset($_POST['login'])){
           </form>
 
 
-          <form action="varatia_auth.php" class="sign-up-form" method="post">
+          <form action="user_auth.php" class="sign-up-form" method="post">
             <h2 class="title">User Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -261,10 +179,10 @@ if(isset($_POST['login'])){
               <i class="fas fa-envelope"></i>
               <input type="email" placeholder="Email" name="email" required/>
             </div>
-            <div class="input-field">
+            <!-- <div class="input-field">
               <i class="fas fa-id-card"></i>
               <input type="number" step="1" minlength="10" maxlength="10" placeholder="NID number" name="nid" required />
-            </div>
+            </div> -->
             <div class="input-field">
               <i class="fas fa-lock"></i>
               <input type="password" minlength="8" placeholder="Password" name="pwd" required/>

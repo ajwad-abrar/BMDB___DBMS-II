@@ -25,7 +25,7 @@
             </div>
 
             <div class="header__img">
-                <img src="images/demo.jpg" alt="">
+                <img src="img/demo.jpg" alt="">
             </div>
         </header>
 
@@ -43,7 +43,7 @@
                             <span class="nav__name">Home</span>
                         </a>
 
-                        <a href="varatia_profile.php" class="nav__link">
+                        <a href="user_profile.php" class="nav__link">
                             <i class='bx bxs-user nav__icon' ></i>
                             <span class="nav__name">Profile</span>
                         </a>
@@ -59,22 +59,11 @@
                             <span class="nav__name">My Home</span>
                         </a>
 
-                        <!-- <a href="varatia_review.php" class="nav__link">
-                            <i class='bx bxs-star-half nav__icon' ></i>
-                            <span class="nav__name">Review</span>
-                        </a> -->
 
                         <a href="varatia_chat.php" class="nav__link">
                             <i class='bx bxs-message-rounded-dots nav__icon' ></i>
                             <span class="nav__name">Chat</span>
                         </a>
-
-
-                        <!-- <a href="#" class="nav__link">
-                            <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
-                            <span class="nav__name">Analytics</span>
-                        </a>  -->
-
 
                     </div>
                 </div>
@@ -86,29 +75,28 @@
             </nav>
         </div>
 
+       
 
-        <?php
 
+    <?php
 
         function showName(){
 
-            // $con = mysqli_connect('localhost', 'root', '190042106', 'vara_hobe');
-            $conn = oci_connect("system", "dbms106AJ", "localhost/orcl");
+            $con =mysqli_connect('localhost', 'root','190042106', 'bmdb');
 
-            $array = oci_parse($conn, "begin:ret:= getUserName(); end;");
 
-            oci_bind_array_by_name($conn,":ret",$arr,100,-1,SQLT_CHR);
+            $email = $_SESSION['email'];
 
-            oci_execute($array);
+            $reg=" select name from user where email= '$email'";
 
-            while($row = oci_fetch_array($array)) {
-                echo "<br>";
-                echo $row[0];
+
+            $result = mysqli_query($con, $reg);
+
+            // echo "<br>";
+
+            while($row = mysqli_fetch_assoc($result)){
+                echo "{$row['name']}";
             }
-
-            oci_close($conn);
-
-
         }
     ?>    
 
@@ -116,44 +104,17 @@
 
     <div id="welcome">  
         <h1 class="welcome_font"> 
-        
-        <?php 
-
-            $conn = oci_connect("system", "dbms106AJ", "localhost/orcl");
-
-            // If (!$conn)
-            //     echo 'Failed to connect to Oracle';
-            // else 
-            //     echo 'Succesfully connected with Oracle DB';
-
-
-            // $statement = oci_parse($conn, 'select 1 from dual');
-            // oci_execute($statement);
-            // $row = oci_fetch_array($statement, OCI_ASSOC+OCI_RETURN_NULLS);	
+        <?php
 
             echo "Welcome Back, ";
 
             showName();
 
-            $sql = "SELECT TO_CHAR(sysdate, 'Day') FROM DUAL";
-            $array = oci_parse($conn, $sql);
+            echo "<br><br><br>Happy " . date("l");
 
-            oci_execute($array);
-
-            while($row = oci_fetch_array($array)) {
-                echo "<br>";
-                echo $row[0];
-            }
-
-
-            oci_close($conn);
-        ?>
-
+            ?>  
 	    </h1>
     </div>
-
-
-
 
 
     
