@@ -44,6 +44,11 @@
                             <span class="nav__name">Profile</span>
                         </a>
 
+                        <a href="admin_add_movie.php" class="nav__link">
+                            <i class='bx bxs-folder-plus nav__icon' ></i>
+                            <span class="nav__name">Add Movie</span>
+                        </a>
+
 
                     </div>
                 </div>

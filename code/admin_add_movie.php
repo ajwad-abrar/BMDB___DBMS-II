@@ -15,9 +15,8 @@
 
         <!-- ===== CSS ===== -->
         <link rel="stylesheet" href="css/admin_style.css">
-        <link rel="stylesheet" href="css/admin_home_style.css">
 
-        <title>Admin Home</title>
+        <title>Add Movie</title>
     </head>
     <body id="body-pd">
         <header class="header" id="header">
@@ -39,7 +38,7 @@
                     </a>
 
                     <div class="nav__list">
-                        <a href="admin_home.php" class="nav__link active">
+                        <a href="admin_home.php" class="nav__link">
                         <i class='bx bxs-home nav__icon' ></i>
                             <span class="nav__name">Home</span>
                         </a>
@@ -49,7 +48,7 @@
                             <span class="nav__name">Profile</span>
                         </a>
 
-                        <a href="admin_add_movie.php" class="nav__link">
+                        <a href="admin_add_movie.php" class="nav__link active">
                             <i class='bx bxs-folder-plus nav__icon' ></i>
                             <span class="nav__name">Add Movie</span>
                         </a>
@@ -64,49 +63,10 @@
             </nav>
         </div>
 
-    
+
+
         
 
-    <?php
-
-        function showName(){
-
-            $con =mysqli_connect('localhost', 'root','190042106', 'bmdb');
-
-
-            $email = $_SESSION['email'];
-
-            $reg= "select name from admin where email= '$email'";
-
-
-            $result = mysqli_query($con, $reg);
-
-            // echo "<br>";
-
-            while($row = mysqli_fetch_assoc($result)){
-                echo "{$row['name']}";
-            }
-        }
-    ?>    
-
-
-
-    <div id="welcome">  
-        <h1 class="welcome_font"> 
-        <?php
-
-            echo "Welcome Back, ";
-
-            showName();
-
-            echo "<br><br><br>Happy " . date("l");
-
-            ?>  
-	    </h1>
-    </div>
-
-
-    
         
         
         <!--=====  JS =====-->
