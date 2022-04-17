@@ -5,7 +5,7 @@ session_start();
 
 $con =mysqli_connect('localhost', 'root','190042106');
 
-mysqli_select_db($con, 'vara_hobe');
+mysqli_select_db($con, 'bmdb');
 
 if(isset($_POST['login'])){
 
