@@ -1,0 +1,58 @@
+
+---------------------------------------
+
+CREATE TABLE User
+(
+	user_id INT,
+	email VARCHAR(50),
+	name VARCHAR(20),
+	gender VARCHAR(20),
+	password VARCHAR(20),
+	CONSTRAINT user_pk PRIMARY KEY(user_id)
+);
+
+
+
+
+------------------------------------------
+
+CREATE TABLE Admin
+(
+	admin_id INT,
+	email VARCHAR(50),
+	name VARCHAR(20),
+	password VARCHAR(20),
+	CONSTRAINT admin_pk PRIMARY KEY(admin_id)
+);
+
+
+
+
+------------------------------------------
+
+
+CREATE TABLE Director
+(
+	director_id INT,
+	email VARCHAR(50),
+	name VARCHAR(20),
+	CONSTRAINT director_pk PRIMARY KEY(director_id)
+);
+
+
+
+
+-------------------------------
+
+CREATE TABLE Movie
+(
+	movie_id INT,
+	title VARCHAR(30),
+	genre VARCHAR(30),
+	release_date DATE,
+	production_cost INT,
+	rating NUMERIC(4, 2),
+	director_id INT,
+	CONSTRAINT movie_pk PRIMARY KEY(movie_id),
+	CONSTRAINT movie_fk FOREIGN KEY(director_id) REFERENCES Director(director_id)
+);
