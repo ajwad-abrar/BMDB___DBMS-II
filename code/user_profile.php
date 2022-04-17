@@ -56,12 +56,12 @@ session_start();
                         
                         <a href="user_top_movie.php" class="nav__link">
                             <i class='bx bxs-home-heart nav__icon' ></i>
-                            <span class="nav__name">My Home</span>
+                            <span class="nav__name">Top Movie</span>
                         </a>
 
-                        <a href="varatia_chat.php" class="nav__link">
-                            <i class='bx bxs-message-rounded-dots nav__icon' ></i>
-                            <span class="nav__name">Chat</span>
+                        <a href="user_rating.php" class="nav__link">
+                            <i class='bx bxs-star-half nav__icon' ></i>
+                            <span class="nav__name">Rating</span>
                         </a>
 
                         

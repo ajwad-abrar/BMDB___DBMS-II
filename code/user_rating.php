@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -14,11 +15,8 @@ session_start();
 
         <!-- ===== CSS ===== -->
         <link rel="stylesheet" href="css/user_style.css">
-        <link rel="stylesheet" href="css/user_browse_movie.css">
 
-        <script src="https://kit.fontawesome.com/22fda2a086.js" crossorigin="anonymous"></script>
-
-        <title>User Browse Movie</title>
+        <title>Rating</title>
     </head>
     <body id="body-pd">
         <header class="header" id="header">
@@ -27,7 +25,7 @@ session_start();
             </div>
 
             <div class="header__img">
-                <img src="images/demo.jpg" alt="">
+                <img src="img/demo.jpg" alt="">
             </div>
         </header>
 
@@ -36,7 +34,7 @@ session_start();
                 <div>
                     <a href="#" class="nav__logo">
                         <i class='bx bx-layer nav__logo-icon'></i>
-                        <span class="nav__logo-name">BMDB</span>
+                        <span class="nav__logo-name">Vara Hobe</span>
                     </a>
 
                     <div class="nav__list">
@@ -50,21 +48,23 @@ session_start();
                             <span class="nav__name">Profile</span>
                         </a>
                         
-                        <a href="user_browse_movie.php" class="nav__link active">
+                        <a href="user_browse_movie.php" class="nav__link">
                             <i class='bx bxs-search-alt-2 nav__icon' ></i>
                             <span class="nav__name">Browse Movie</span>
                         </a>
 
+                        
                         <a href="user_top_movie.php" class="nav__link">
                             <i class='bx bxs-movie nav__icon' ></i>
                             <span class="nav__name">Top Movie</span>
                         </a>
 
 
-                        <a href="user_rating.php" class="nav__link">
+                        <a href="user_rating.php" class="nav__link active">
                             <i class='bx bxs-star-half nav__icon' ></i>
                             <span class="nav__name">Rating</span>
                         </a>
+
 
                     </div>
                 </div>
@@ -76,56 +76,16 @@ session_start();
             </nav>
         </div>
 
+       
 
+        
 
-        <div class="tab-content">
+        
 
-            <div id="inbox" class="tab-pane active jumbotron"><p></p>
-
-                <h1 class="text-center" style="color: orangered; margin-bottom: 50px;">Write down the movie name: </h1>
-
-
-
-                <form action="user_browse_movie.php" method="POST">
-
-                    <div class="container">
-
-                        <div class="row">
-                            
-                            <div class="col">
-
-                            <input type="text" class="form-control" id="movie_form" placeholder="Enter name of the movie" name="movie_name">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="text-center mt-5">
-                        <button type="submit" class="btn btn-success btn-lg" id="submit_button" name="usear_search_movie">Submit</button>
-                    </div>
-
-
-                </form>
-
-                <div class="card mx-auto" style="width: 28rem;" id="profile-card">
-
-                <div class="card-body">
-                    <h4 class="card-title text-center" style="color:dodgerblue; font-size: 26px; font-weight: 700;">Movie Details</h4>
-                    
-
-                </div>
-
-                </div>         
-
-            </div>          
-
-        </div>
-
-
+    
+        
+        
         <!--=====  JS =====-->
         <script src="js/user_js.js"></script>
-
-
     </body>
 </html>
