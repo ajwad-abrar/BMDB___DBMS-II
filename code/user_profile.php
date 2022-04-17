@@ -48,13 +48,13 @@ session_start();
                             <span class="nav__name">Profile</span>
                         </a>
                         
-                        <a href="varatia_search_home.php" class="nav__link">
+                        <a href="user_browse_movie.php" class="nav__link">
                             <i class='bx bxs-search-alt-2 nav__icon' ></i>
-                            <span class="nav__name">Search Home</span>
+                            <span class="nav__name">Browse Movie</span>
                         </a>
 
                         
-                        <a href="varatia_my_home.php" class="nav__link">
+                        <a href="user_top_movie.php" class="nav__link">
                             <i class='bx bxs-home-heart nav__icon' ></i>
                             <span class="nav__name">My Home</span>
                         </a>

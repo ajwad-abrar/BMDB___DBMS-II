@@ -1,5 +1,6 @@
 <?php
-    session_start();
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +15,8 @@
 
         <!-- ===== CSS ===== -->
         <link rel="stylesheet" href="css/user_style.css">
-        <link rel="stylesheet" href="css/user_home_style.css">
 
-        <title>User Home</title>
+        <title>Top Movie</title>
     </head>
     <body id="body-pd">
         <header class="header" id="header">
@@ -34,11 +34,11 @@
                 <div>
                     <a href="#" class="nav__logo">
                         <i class='bx bx-layer nav__logo-icon'></i>
-                        <span class="nav__logo-name">BMDB</span>
+                        <span class="nav__logo-name">Vara Hobe</span>
                     </a>
 
                     <div class="nav__list">
-                        <a href="user_home.php" class="nav__link active">
+                        <a href="user_home.php" class="nav__link">
                         <i class='bx bxs-home nav__icon' ></i>
                             <span class="nav__name">Home</span>
                         </a>
@@ -54,16 +54,27 @@
                         </a>
 
                         
-                        <a href="user_top_movie.php" class="nav__link">
+                        <a href="varatia_my_home.php" class="nav__link active">
                             <i class='bx bxs-movie nav__icon' ></i>
                             <span class="nav__name">Top Movie</span>
                         </a>
 
+                        <!-- <a href="varatia_review.php" class="nav__link">
+                            <i class='bx bxs-star-half nav__icon' ></i>
+                            <span class="nav__name">Review</span>
+                        </a> -->
 
                         <a href="varatia_chat.php" class="nav__link">
                             <i class='bx bxs-message-rounded-dots nav__icon' ></i>
                             <span class="nav__name">Chat</span>
                         </a>
+
+
+                        <!-- <a href="#" class="nav__link">
+                            <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
+                            <span class="nav__name">Analytics</span>
+                        </a>  -->
+
 
                     </div>
                 </div>
@@ -77,45 +88,9 @@
 
        
 
+        
 
-    <?php
-
-        function showName(){
-
-            $con =mysqli_connect('localhost', 'root','190042106', 'bmdb');
-
-
-            $email = $_SESSION['email'];
-
-            $reg=" select name from user where email= '$email'";
-
-
-            $result = mysqli_query($con, $reg);
-
-            // echo "<br>";
-
-            while($row = mysqli_fetch_assoc($result)){
-                echo "{$row['name']}";
-            }
-        }
-    ?>    
-
-
-
-    <div id="welcome">  
-        <h1 class="welcome_font"> 
-        <?php
-
-            echo "Welcome Back, ";
-
-            showName();
-
-            echo "<br><br><br>Happy " . date("l");
-
-            ?>  
-	    </h1>
-    </div>
-
+        
 
     
         

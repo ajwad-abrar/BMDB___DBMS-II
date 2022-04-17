@@ -52,7 +52,7 @@ session_start();
                         
                         <a href="user_browse_movie.php" class="nav__link active">
                             <i class='bx bxs-search-alt-2 nav__icon' ></i>
-                            <span class="nav__name">Search Home</span>
+                            <span class="nav__name">Browse Movie</span>
                         </a>
 
                         <a href="user_top_movie.php" class="nav__link">
@@ -78,93 +78,53 @@ session_start();
 
 
 
-        <div id="search_flat">
-            <h1 class="text-center">Browse the movies </h1>
-        </div>
+        <div class="tab-content">
+
+            <div id="inbox" class="tab-pane active jumbotron"><p></p>
+
+                <h1 class="text-center" style="color: orangered; margin-bottom: 50px;">Write down the movie name: </h1>
 
 
-        <form action="" method="post">
 
-            <div class="container text-center">
+                <form action="user_browse_movie.php" method="POST">
 
-                <div class="row">
+                    <div class="container">
 
-                    <div class="col">
-                        <h4 class="text-center">City</h4>  
+                        <div class="row">
+                            
+                            <div class="col">
 
-                        <select class="form-select form-select-md mb-3" name="city" id="city">
-                            <option value="" selected="selected">Select city</option>
-                        </select>
-                    </div>
+                            <input type="text" class="form-control" id="movie_form" placeholder="Enter name of the movie" name="movie_name">
+                            </div>
 
-                    <div class="col">
-
-                        <h4 class="text-center">Location</h4>
-                        <select class="form-select form-select-md mb-3"  name="location" id="location">
-                            <option value="" selected="selected">Please select city first</option>
-                        </select>
+                        </div>
 
                     </div>
 
-                    <div class="col">
-
-                        <h4 class="text-center">Sector/ Block</h4>
-                        <select class="form-select form-select-md mb-3"  name="sector" id="sector">
-                            <option value="" selected="selected">Please select location first</option>
-                        </select>
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn btn-success btn-lg" id="submit_button" name="usear_search_movie">Submit</button>
                     </div>
 
 
-                    <div class="w-100" id="part-2"></div> 
-                    <div class="col">
-                        <h4 class="text-center">Beds</h4>
-                        <select class="form-select form-select-md mb-3"  id="bed" name="bed">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <h4 class="text-center">Baths</h4>
-                        <select class="form-select form-select-md mb-3"  id="bath" name="bath">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <h4 class="text-center">Price Range</h4>
-                        <select class="form-select form-select-md mb-3"  id="bath" name="bath">
-                            <option value="1">0 - 5000</option>
-                            <option value="2">5001 - 10000</option>
-                            <option value="3">10001 - 15000</option>
-                            <option value="4">15001 - 20000</option>
-                            <option value="5">20001 - 25000</option>
-                        </select>
-                    </div>
+                </form>
+
+                <div class="card mx-auto" style="width: 28rem;" id="profile-card">
+
+                <div class="card-body">
+                    <h4 class="card-title text-center" style="color:dodgerblue; font-size: 26px; font-weight: 700;">Movie Details</h4>
+                    
 
                 </div>
 
-            </div>
+                </div>         
 
+            </div>          
 
-            <div class="text-center mt-5">
-				<button onclick="requestSubmission()"  type="submit" name="submit" class="btn btn-success btn-lg" id="submit_button">Submit</button>
-			</div>
-            
-
-        </form>
-
-
-
+        </div>
 
 
         <!--=====  JS =====-->
         <script src="js/user_js.js"></script>
-        <script src="js/city-list.js"></script>
 
 
     </body>
